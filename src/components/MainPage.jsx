@@ -1,58 +1,35 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import { CoinContext } from "./CoinState";
+import CryptoGraph from "./CryptoGraph";
 
-function MainPage() {
-  const { favorites, setFavorites } = useContext(CoinContext);
-  const [coin, setCoin] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+const MainPage = () => {
+  const { favorites } = useContext(CoinContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!coin) {
-      setError("Please enter a coin name");
-      return;
-    }
-    setFavorites([...favorites, coin]);
-    setCoin("");
-    setError("");
-    navigate("/coin_info");
-  };
+  const graphCoinId =
+    favorites.length > 0 ? favorites[0].toLowerCase() : "bitcoin";
 
   return (
-    <div className="wrapper">
-      <h1 className="title">Crypto Tracker</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <div className="form_group">
-          <label className="label">Favorite Coin</label>
-          <input
-            type="text"
-            value={coin}
-            onChange={(e) => setCoin(e.target.value)}
-            placeholder="e.g., Bitcoin"
-            className="input"
-          />
-        </div>
-        {error && <p className="error">{error}</p>}
-        <button type="submit" className="btn">
-          Add Coin
-        </button>
-      </form>
-      {favorites.length > 0 && (
-        <div className="card">
-          <h2 className="subtitle">Your Favorites</h2>
-          <ul className="list">
-            {favorites.map((c, i) => (
-              <li key={i} className="item">
-                {c}
+    <div className="main-page-container">
+      <h1 className="page-title">Welcome to the Crypto Dashboard</h1>
+      <div className="content-section">
+        <h2 className="section-title">Your Favorite Coins:</h2>
+        <ul className="favorites-list">
+          {favorites.length > 0 ? (
+            favorites.map((coin, index) => (
+              <li key={index} className="favorite-item">
+                {coin}
               </li>
-            ))}
-          </ul>
+            ))
+          ) : (
+            <p className="no-favorites">No favorite coins added yet.</p>
+          )}
+        </ul>
+        <div className="graph-section">
+          <CryptoGraph coinId={graphCoinId} />
         </div>
-      )}
+      </div>
     </div>
   );
-}
+};
 
 export default MainPage;

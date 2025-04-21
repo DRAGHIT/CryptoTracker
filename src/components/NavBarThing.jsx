@@ -10,7 +10,7 @@ function NavBarThing() {
           </Link>
         </li>
         <li>
-          <Link className="nav_link" to="/coin_info">
+          <Link className="nav_link" to="/coin-info/bitcoin">
             Coin Info
           </Link>
         </li>

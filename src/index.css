@@ -1,20 +1,32 @@
+/* Reset and Box Sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #1f2937, #111827);
-  color: #e5e7eb;
+  font-family: "Inter", sans-serif;
+  background: #1a202c;
+  color: #e2e8f0;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-.nav {
-  background: #1e40af;
+/* Navigation Bar */
+.nav,
+.NavBarThing {
+  font-size: 1.4rem; /* Larger nav text */
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nav_items {
@@ -24,38 +36,47 @@ body {
   gap: 1.5rem;
 }
 
-.nav_link {
-  color: #ffffff;
+.nav_link,
+.NavBarThing a {
+  color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.2s;
 }
 
-.nav_link:hover {
+.nav_link:hover,
+.NavBarThing a:hover {
+  background: #34495e;
   color: #fcd34d;
 }
 
+/* Wrapper */
 .wrapper {
-  max-width: 600px;
+  max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
 }
 
-.title {
-  font-size: 1.75rem;
-  font-weight: 600;
+/* Titles */
+.title,
+.page-title {
+  font-size: 2.5rem; /* Larger heading */
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #74b9ff; /* Soft blue for aesthetic */
 }
 
-.subtitle {
+.subtitle,
+.section-title {
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 1rem;
   color: #d1d5db;
 }
 
+/* Form Styling */
 .form {
   display: flex;
   flex-direction: column;
@@ -91,27 +112,32 @@ body {
   border-color: #1e40af;
 }
 
-.btn {
-  background: #1e40af;
-  color: #ffffff;
-  padding: 0.75rem;
+/* Button Styling */
+.btn,
+.button-thing {
+  font-size: 1.2rem; /* Larger button text */
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: #74b9ff;
+  color: #1a202c;
   border: none;
-  border-radius: 6px;
-  font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s;
 }
 
-.btn:hover {
-  background: #1e3a8a;
+.btn:hover,
+.button-thing:hover {
+  background: #a29bfe;
 }
 
+/* Error Message */
 .error {
   color: #dc2626;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
 
+/* Card Styling */
 .card {
   background: #ffffff;
   padding: 1.5rem;
@@ -120,18 +146,25 @@ body {
   margin-top: 1.5rem;
 }
 
-.list {
+/* List Styling */
+.list,
+.favorites-list {
   list-style: none;
+  padding: 0;
 }
 
-.item {
+.item,
+.favorite-item {
   padding: 0.75rem;
   border-bottom: 1px solid #e5e7eb;
   color: #374151;
   transition: background 0.2s;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
-.item:hover {
+.item:hover,
+.favorite-item:hover {
   background: #f9fafb;
 }
 
@@ -140,6 +173,12 @@ body {
   color: #fcd34d;
 }
 
+.no-favorites {
+  font-size: 1.3rem;
+  color: #bdc3c7;
+}
+
+/* Loading and Text Styling */
 .loading,
 .text {
   text-align: center;
@@ -148,16 +187,40 @@ body {
   color: #d1d5db;
 }
 
+/* Graph Styling */
+.graph-section {
+  margin-top: 2rem;
+}
+
+.graph-container {
+  background: #2d3436;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* Coin Info Container */
+.coin-info-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
   .wrapper {
     padding: 0.75rem;
   }
 
-  .title {
+  .title,
+  .page-title {
     font-size: 1.5rem;
   }
 
-  .subtitle {
+  .subtitle,
+  .section-title {
     font-size: 1.125rem;
   }
 

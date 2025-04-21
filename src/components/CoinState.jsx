@@ -1,9 +1,10 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const CoinContext = createContext();
 
 const CoinState = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+
   return (
     <CoinContext.Provider value={{ favorites, setFavorites }}>
       {children}

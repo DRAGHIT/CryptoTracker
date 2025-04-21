@@ -1,0 +1,52 @@
+/* src/styles/graph_thing.css */
+/* Graph Container */
+.graph-container {
+  background: #2d3436;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin: 2rem auto;
+  max-width: 800px; /* Larger container */
+}
+
+/* Body Styling */
+body {
+  font-family: "Inter", sans-serif;
+  background: #1a202c;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.5rem; /* Bigger heading */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  font-size: 1.4rem; /* Bigger nav text */
+  padding: 1rem;
+  background: #2d3436;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Button Styling */
+.button {
+  font-size: 1.2rem; /* Bigger button text */
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: #74b9ff;
+  color: #1a202c;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #a29bfe;
+}
